@@ -50,15 +50,15 @@ void MMult1(long m, long n, long k, double *A, double *B, double *C) {
 }
 
 int main(int argc, char** argv) {
-  const long PFIRST = 256;
-  const long PLAST = 4096;
-  const long PINC = 256;
+  const long PFIRST = 512;
+  const long PLAST = 6144;
+  const long PINC = 512;
 
   Timer t;
   printf(" Dimension       Time    Gflop/s        Error\n");
   for (long p = PFIRST; p < PLAST; p += PINC) {
     long m = p, n = p, k = p;
-    long NREPEATS = 1e9/(m*n*k)+1;
+    long NREPEATS = 1e8/(m*n*k)+1;
     double* a = (double*) malloc(m * k * sizeof(double)); // m x k
     double* b = (double*) malloc(k * n * sizeof(double)); // k x n
     double* c = (double*) malloc(m * n * sizeof(double)); // m x n
