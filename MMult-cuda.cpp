@@ -1,3 +1,6 @@
+// Make sure you load the cuda module before compiling
+// E.g., module load cuda-10.0
+
 #include <algorithm>
 #include <stdio.h>
 #include <math.h>
